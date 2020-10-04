@@ -24,6 +24,8 @@
     </style>
 
     <script type='text/javascript'>
+        console.log('hello from elem-flashmsg');
+
 // Test this element. This code is auto-removed by the chilipeppr.load()
 cprequire_test(["inline:com-chilipeppr-elem-flashmsg"], function (fm) {
     console.log("test running of " + fm.id);
@@ -59,11 +61,11 @@ cprequire_test(["inline:com-chilipeppr-elem-flashmsg"], function (fm) {
 } /*end_test*/ );
 
 cpdefine("inline:com-chilipeppr-elem-flashmsg", ["chilipeppr_ready"], function () {
-    //console.log("Inside of define for com-chilipeppr-elem-flashmsg");
+    console.log("Inside of define for com-chilipeppr-elem-flashmsg");
+
     return {
         id: "com-chilipeppr-elem-flashmsg",
-        url: "http://fiddle.jshell.net/jlauer/qp7Em/show/light/",
-        fiddleurl: "http://jsfiddle.net/jlauer/qp7Em/",
+        url: "widgets/elem-flash/auto-generated-widget.html",
         name: "Element / Flash Messsage",
         desc: "This element shows a flash message at the top of the browser.",
         publish: null,

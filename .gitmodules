@@ -88,3 +88,24 @@
 [submodule "widgets/widget-wcs"]
 	path = widgets/widget-wcs
 	url = https://github.com/chilipeppr/widget-wcs.git
+[submodule "widgets/widget-grbl-autolevel"]
+	path = widgets/widget-grbl-autolevel
+	url = https://github.com/jpadie/widget-grbl-autolevel.git
+[submodule "widgets/widget-gcodelist-jpaFork"]
+	path = widgets/widget-gcodelist-jpaFork
+	url = https://github.com/jpadie/widget-gcodelist-jpaFork.git
+[submodule "widgets/widget-grbl-xyz"]
+	path = widgets/widget-grbl-xyz
+	url = https://github.com/chilipeppr-grbl/widget-grbl-xyz.git
+[submodule "widgets/elem-flash"]
+	path = widgets/elem-flash
+	url = https://github.com/chilipeppr/element-flash.git
+[submodule "widgets/element-gcodedata"]
+	path = widgets/element-gcodedata
+	url = https://github.com/chilipeppr/element-gcodedata.git
+[submodule "widgets/element-flash"]
+	path = widgets/element-flash
+	url = https://github.com/chilipeppr/element-flash.git
+[submodule "widgets/grbl1-test-widget"]
+	path = widgets/grbl1-test-widget
+	url = https://github.com/jpadie/grbl1-test-widget.git

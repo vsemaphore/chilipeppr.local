@@ -32,6 +32,7 @@ window.replaceToLocal = function(url){
       if(url.match(/githubusercontent/)){
          // https://raw.githubusercontent.com/chilipeppr/widget-pubsubviewer/master/auto-generated-widget.html
          replaced = url.replace(/^.+widget\-/, "widgets/widget-");
+         replaced = replaced.replace(/^.+element\-/, "widgets/element-");
          replaced = replaced.replace(/\/master/, "");
       }
 
@@ -56,7 +57,7 @@ window.replaceToLocal = function(url){
       }
 
       if(url.match(/datagetallkeys/)){
-         arguments[0].url = 'data/datagetallkeys.json';
+         replaced = 'data/datagetallkeys.json';
       }
       
        if(url.match(/js\/three/)){

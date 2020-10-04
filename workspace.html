@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <title>
+        CNC workspace
+    </title>
+
+    <!-- ChiliPeppr is based on bootstrap CSS. -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <!-- load replace callback as external js file for improved development -->
+    <script type='text/javascript' src="jslib/cplocal.js"></script>
+
+    <!-- Customized version of require.js for ChiliPeppr. Please see require.js docs for how
+    ChiliPeppr's dependency system works as it's based on require.js. -->
+    <script type='text/javascript' src="//i2dcui.appspot.com/js/require.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="workspace.css">
+
+    <script type='text/javascript' src="workspace.js"></script>
+
+</head>
+
+<body>
+
+<div id="com-chilipeppr-widget-flash-instance"></div>
+
+<!-- This is the workspace layout for the GRBL Workspace -->
+<div id="com-chilipeppr-ws-gcode-wrapper" class="dropArea">
+    <div id="com-chilipeppr-ws-gcode-dragdropoverlay" class="hidden">
+        <div class="well">Drag and Drop Gcode Files Onto Browser Window</div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-3 widgetx padrt left">
+                <!-- 3D Viewer. Must be loaded at top to get z-orders correct -->
+                <div id="com-chilipeppr-3dviewer">Load 3D Viewport Here</div>
+                <!-- Workspace Hdr -->
+                <div id="com-chilipeppr-ws-gcode-hdr" class="com-chilipeppr-ws-hdr zhigh well">
+                    GRBL Workspace
+                    <div id="com-chilipeppr-ws-gcode-menu" class="">
+
+
+                        <div class="pull-right">
+                            <div class="dropdown ">
+                                <button type="button" class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-ws" role="menu">
+                                    <li id="com-chilipeppr-ws-gcode-menu-billboard" style="width:350px;">
+                                        <div class="com-chilipeppr-ws-billboard"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                        <div id="com-chilipeppr-ws-gcode-dragdrop" style="margin-right:6px;" class="pull-left"></div>
+
+                        <div class="dropdown pull-left">
+                            <button class="btn btn-xs btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Widgets<span class="caret"></span></button>
+                            <ul class="dropdown-menu workspace-dropdown " aria-labelledby="dropdownMenu1" style="z-index:1000;">
+                                <li><button type="button" class="btn btn-xs btn-default btn-ws zipwhip-button " data-container="body" data-toggle="popover" data-placement="auto" data-content="Get a text sent to you when your CNC job is completed." data-trigger="hover"
+                                            data-delay="100"><span class="zipwhip"></span></button></li>
+                                <li><button type="button" class="btn-ws btn btn-xs btn-default autolevel-button" data-container="body" data-toggle="popover" data-placement="auto" data-content="Allows you to auto-level your PCB before milling. Most raw PCB boards have a slight warpage. This widget lets you probe the warpage and then it auto-scales your Gcode to match the warpage so you get very clean/predictable z-positions in your milling job."
+                                            data-trigger="hover" data-delay="100">Auto-Level</button></li>
+                                <li><button type="button" class="btn-ws btn btn-xs btn-default macro-button " data-container="body" data-toggle="popover" data-placement="auto" data-content="Run a macro." data-trigger="hover" data-delay="100">Macro</button></li>
+                                <li><button type="button" class="btn-ws btn btn-xs btn-default jscut-button " data-container="body" data-toggle="popover" data-placement="auto" data-content="Load file from JSCut" data-trigger="hover" data-delay="100">JScut</button></li>
+                                <li><button type="button" class="btn-ws btn btn-xs btn-default eagle-button" data-container="body" data-toggle="popover" data-placement="auto" data-content="Eagle Board Import" data-trigger="hover" data-delay="100">Eagle BRD Import</button></li>
+                                <li><button type="button" class="btn-ws btn btn-xs btn-default gpio-button" data-container="body" data-toggle="popover" data-placement="auto" data-content="GPIO Server by Ben Delarre. Allows you to control your GPIO ports on a Raspberry Pi or Beagle Bone Black to toggle on/off hardware components. For example, you could toggle a fan on/off via GPIO."
+                                            data-trigger="hover" data-delay="100">GPIO</button></li>
+                                <li><button type="button" class="btn-ws btn btn-xs btn-default shuttlexpress-button" data-container="body" data-toggle="popover" data-placement="auto" data-content="ShuttleXpress Jog Dial." data-trigger="hover" data-delay="100">ShuttleXpress</button></li>
+                                <li><button type="button" class="btn-ws btn btn-xs btn-default touchplate-button" data-container="body" data-toggle="popover" data-placement="auto" data-content="Use a touch plate to easily figure out your Z zero of your workpiece and set it."
+                                            data-trigger="hover" data-delay="100">Touch Plate</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="zhigh hidden" id="com-chilipeppr-ws-zipwhip"></div>
+                <div class="zhigh hidden" id="com-chilipeppr-ws-autolevel">Auto-Level Here</div>
+                <div class="zhigh hidden" id="com-chilipeppr-ws-macro">Macro Here</div>
+                <div class="zhigh hidden" id="com-chilipeppr-ws-jscut">Jscut Here</div>
+                <div class="zhigh hidden" id="com-chilipeppr-ws-eagle">Eagle BRD Here</div>
+                <div class="zhigh hidden" id="com-chilipeppr-ws-gpio">GPIO Here</div>
+                <div class="zhigh hidden" id="com-chilipeppr-ws-shuttlexpress">ShuttleXpress Here</div>
+                <div class="zhigh hidden" id="com-chilipeppr-ws-touchplate">Touch Plate Here</div>
+                <div id="com-chilipeppr-gcode-list" class="zhigh">Load Gcode List Here</div>
+                <div id="com-chilipeppr-serialport-log" class="zhigh">Load Serial Port Log Here</div>
+
+            </div>
+            <div class="widget col-xs-6">
+                <div class="">
+                    <div id="com-chilipeppr-3dviewer-controlpanel" style=""></div>
+                </div>
+            </div>
+            <div class="col-xs-3 nopadding">
+                <!-- XYZ -->
+                <div id="com-chilipeppr-xyz-instance" class="">Load XYZ Here</div>
+                <!-- Tinyg -->
+                <div id="com-chilipeppr-widget-grbl-instance" class="">Load GRBL Here</div>
+                <!-- WebRTC Client -->
+                <!--<div id="com-chilipeppr-webrtcclient" class="">Load WebRTC Client Here</div>-->
+                <!-- Serial Port Selector -->
+                <div id="com-chilipeppr-serialport-spselector" class="">Load Serial Port Selector Here</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
