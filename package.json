@@ -1,0 +1,22 @@
+{
+  "name": "chilipeppr.local",
+  "version": "1.0.0",
+  "description": "Solution for an offline chilipeppr that can run local on your machine (Windows/Linux)",
+  "main": "app.js",
+  "scripts": {
+    "dev": "http-server -p 8080 -c0 --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vsemaphore/chilipeppr.local.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vsemaphore/chilipeppr.local/issues"
+  },
+  "homepage": "https://github.com/vsemaphore/chilipeppr.local#readme",
+  "devDependencies": {
+    "http-server": "0.12.3"
+  }
+}
